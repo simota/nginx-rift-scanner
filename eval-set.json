@@ -1,0 +1,91 @@
+{
+  "skill": "nginx-rift-scanner",
+  "version": "1.0.0",
+  "description": "Trigger-activation eval set for nginx-rift-scan skill",
+  "queries": [
+    {
+      "id": "pos-01",
+      "query": "Scan my nginx config for CVE-2026-42945",
+      "should_trigger": true,
+      "rationale": "Direct CVE reference"
+    },
+    {
+      "id": "pos-02",
+      "query": "Check if my NGINX version is vulnerable to NGINX Rift",
+      "should_trigger": true,
+      "rationale": "Direct CVE name reference"
+    },
+    {
+      "id": "pos-03",
+      "query": "Audit nginx.conf for the rewrite module heap overflow",
+      "should_trigger": true,
+      "rationale": "Describes the specific vulnerability type and module"
+    },
+    {
+      "id": "pos-04",
+      "query": "Is nginx 1.29.0 vulnerable to the Rift CVE?",
+      "should_trigger": true,
+      "rationale": "Version range question about the specific CVE"
+    },
+    {
+      "id": "pos-05",
+      "query": "Check my Dockerfile for a vulnerable nginx image tag",
+      "should_trigger": true,
+      "rationale": "Dockerfile version check is a core capability"
+    },
+    {
+      "id": "pos-06",
+      "query": "Find rewrite directives with unnamed PCRE captures and question marks",
+      "should_trigger": true,
+      "rationale": "Describes the exact config pattern the skill detects"
+    },
+    {
+      "id": "pos-07",
+      "query": "Run the nginx rift scanner against /etc/nginx/nginx.conf",
+      "should_trigger": true,
+      "rationale": "Explicit invocation using tool name"
+    },
+    {
+      "id": "pos-08",
+      "query": "Is NGINX Plus R36P3 affected by CVE-2026-42945?",
+      "should_trigger": true,
+      "rationale": "NGINX Plus version classification question"
+    },
+    {
+      "id": "neg-01",
+      "query": "How do I configure nginx rate limiting?",
+      "should_trigger": false,
+      "rationale": "Generic nginx config question unrelated to CVE-2026-42945"
+    },
+    {
+      "id": "neg-02",
+      "query": "Scan my app for SQL injection vulnerabilities",
+      "should_trigger": false,
+      "rationale": "Different vulnerability class and target"
+    },
+    {
+      "id": "neg-03",
+      "query": "What is a heap buffer overflow?",
+      "should_trigger": false,
+      "rationale": "General security education, not a scan request"
+    },
+    {
+      "id": "neg-04",
+      "query": "Review my nginx upstream load balancing config",
+      "should_trigger": false,
+      "rationale": "Load balancing config review, not CVE scan"
+    },
+    {
+      "id": "edge-01",
+      "query": "My nginx has a rewrite rule with $1 in it, is that a problem?",
+      "should_trigger": true,
+      "rationale": "Describes the unnamed capture pattern; should route to scanner"
+    },
+    {
+      "id": "edge-02",
+      "query": "Scan for CVE-2024-56790",
+      "should_trigger": false,
+      "rationale": "Different CVE number; should not activate nginx-rift-scan"
+    }
+  ]
+}
