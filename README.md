@@ -44,7 +44,7 @@ A scope block is flagged when **all three conditions hold**:
 
 ```bash
 # Clone and run
-git clone https://github.com/yourorg/nginx-rift-scanner
+git clone https://github.com/simota/nginx-rift-scanner.git
 cd nginx-rift-scanner
 
 # Scan local nginx (binary in PATH, config at /etc/nginx/nginx.conf)
